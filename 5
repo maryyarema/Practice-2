@@ -1,0 +1,70 @@
+using System;
+
+ class Program
+{
+    static void Main(string[] args)
+    {
+
+        Console.WriteLine("Enter an array:");
+        string arr;
+
+        arr = Console.ReadLine();
+        char[] array = new char[256];
+
+
+        char[] separators = new char[] { ' ' };
+
+        string[] subs1 = arr.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+        int i = 0;
+        foreach (var sub in subs1)
+        {
+            array[i] = char.Parse(sub);
+            i++;
+        }
+        Console.WriteLine("Enter an second array");
+        string x;
+
+        x = Console.ReadLine();
+        char[] y = new char[256];
+
+
+
+        string[] subs = x.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+        int j = 0;
+        foreach (var sub in subs)
+        {
+            y[j] = char.Parse(sub);
+            j++;
+        }
+
+        if (x[0] < arr[0])
+        {
+            for (int d = 0; d < y.Length; d++)
+            {
+                Console.Write($"{y[d]}");
+            }
+            Console.WriteLine();
+            for (int d = 0; d < array.Length; d++)
+            {
+                Console.Write($"{array[d]}");
+            }
+        }
+        else
+        {
+            for (int d = 0; d < array.Length; d++)
+            {
+                Console.Write($"{array[d]}");
+            }
+            Console.WriteLine();
+            for (int d = 0; d < y.Length; d++)
+            {
+                Console.Write($"{y[d]}");
+            }
+
+
+        }
+
+
+
+    }
+}
